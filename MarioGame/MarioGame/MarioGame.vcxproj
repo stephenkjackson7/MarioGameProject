@@ -140,7 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MarioGame.cpp" />
+    <ClCompile Include="Texture2D.cpp" />
   </ItemGroup>
+<<<<<<< Updated upstream
+=======
+  <ItemGroup>
+    <Library Include="SDL2\SDL\SDL2.lib" />
+    <Library Include="SDL2\SDL\SDL2main.lib" />
+    <Library Include="SDL2\SDL\SDL2_image.lib" />
+    <Library Include="SDL2\SDL\SDL2_mixer.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="Commons.h" />
+    <ClInclude Include="Texture2D.h" />
+  </ItemGroup>
+>>>>>>> Stashed changes
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
