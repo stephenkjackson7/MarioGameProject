@@ -10,6 +10,12 @@ struct Vector2D
 		x = 0.0f;
 		y = 0.0f;
 	}
+
+	Vector2D(float initial_x, float initial_y)
+	{
+		x = initial_x;
+		y = initial_y;
+	}
 };
 
 enum SCREENS
@@ -22,14 +28,8 @@ enum SCREENS
 	SCREEN_HIGHSCORES
 };
 
-struct InitVector2D
+enum FACING
 {
-	float x;
-	float y;
-
-	InitVector2D(float initial_x, float initial_y)
-	{
-		x = initial_x;
-		y = initial_y;
-	}
+	FACING_LEFT,
+	FACING_RIGHT
 };
