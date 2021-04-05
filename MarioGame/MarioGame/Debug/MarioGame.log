@@ -1,2 +1,9 @@
-﻿  Character.cpp
+﻿  Collisions.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(26,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(26,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameScreenLevel1.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(26,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(26,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(57): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe

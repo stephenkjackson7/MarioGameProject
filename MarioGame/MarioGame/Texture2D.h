@@ -17,8 +17,8 @@ public:
 	void Free();
 	void Render(Vector2D new_position, SDL_RendererFlip flip, double angle = 0.0);
 
-	int getWidth() { return m_width; }
-	int getHeight() { return m_height; }
+	int GetWidth() { return m_width; }
+	int GetHeight() { return m_height; }
 
 private:
 	SDL_Renderer* m_renderer;

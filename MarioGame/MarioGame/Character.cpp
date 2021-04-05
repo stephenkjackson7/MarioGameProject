@@ -1,5 +1,4 @@
 #include "Character.h"
-#include "Texture2D.h"
 
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position)
 {
@@ -9,6 +8,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	m_position = start_position;
 	m_texture = new Texture2D(m_renderer);
 	m_facing_direction = FACING_RIGHT;
+	m_collision_radius = 15.0f;
 
 	if (!m_texture->LoadFromFile(imagePath))
 	{
@@ -90,5 +90,10 @@ void Character::AddGravity(float deltaTime)
 
 	else
 		m_can_jump = true;
+}
+
+float Character::GetCollisionRadius()
+{
+	return m_collision_radius;
 }
 
