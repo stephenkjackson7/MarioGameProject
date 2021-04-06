@@ -6,13 +6,14 @@
 #include "Commons.h"
 #include "Texture2D.h"
 #include "constants.h"
+#include "LevelMap.h"
 
 class Texture2D;
 
 class Character
 {
 public:
-	Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position);
+	Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position, LevelMap* map);
 	~Character();
 
 	virtual void Render();
@@ -42,6 +43,9 @@ protected:
 	virtual void MoveRight(float deltaTime);
 	virtual void AddGravity(float deltaTime);
 	virtual void Jump();
+
+private:
+	LevelMap* m_current_level_map;
 };
 
 #endif
