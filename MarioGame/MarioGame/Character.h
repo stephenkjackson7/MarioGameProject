@@ -21,6 +21,8 @@ public:
 	void SetPosition(Vector2D new_position);
 	Vector2D GetPosition();
 	float GetCollisionRadius();
+	bool IsJumping() { return m_jumping; };
+	void CancelJump() { m_jump_force = 0.0f; };
 
 	inline Rect2D GetCollisionBox()
 	{
@@ -38,7 +40,6 @@ protected:
 	bool m_can_jump;
 	float m_jump_force;
 	float m_collision_radius;
-
 	virtual void MoveLeft(float deltaTime);
 	virtual void MoveRight(float deltaTime);
 	virtual void AddGravity(float deltaTime);
