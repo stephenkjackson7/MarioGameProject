@@ -2,6 +2,7 @@
 
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position, LevelMap* map)
 {
+	m_alive = true;
 	m_current_level_map = map;
 	m_moving_left = false;
 	m_moving_right = false;

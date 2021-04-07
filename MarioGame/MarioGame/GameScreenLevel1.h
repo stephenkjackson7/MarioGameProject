@@ -7,8 +7,10 @@
 #include "Character.h"
 #include "CharacterMario.h"
 #include "CharacterLuigi.h"
+#include "CharacterKoopa.h"
 #include "LevelMap.h"
 #include "PowBlock.h"
+#include <vector>
 
 class PowBlock;
 class Character;
@@ -28,6 +30,8 @@ public:
 private:
 	CharacterMario* mario;
 	CharacterLuigi* luigi;
+	CharacterKoopa* koopa;
+	vector<CharacterKoopa*> m_enemies;
 	Texture2D* m_background_texture;
 	LevelMap* m_level_map;
 	PowBlock* m_pow_block;
@@ -40,6 +44,9 @@ private:
 	void DoScreenShake();
 	void SetLevelMap();
 	bool SetUpLevel();
+	
+	void UpdateEnemies(float deltaTime, SDL_Event e);
+	void CreateKoopa(Vector2D position, FACING direction, float speed);
 
 };
 

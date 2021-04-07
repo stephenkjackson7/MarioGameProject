@@ -1,6 +1,7 @@
 #include "GameScreenManager.h"
 #include "GameScreen.h"
 #include "GameScreenLevel1.h"
+#include "CharacterMario.h"
 
 GameScreenManager::GameScreenManager(SDL_Renderer* renderer, SCREENS startScreen)
 {
