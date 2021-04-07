@@ -65,6 +65,7 @@ void Character::Update(float deltaTime, SDL_Event e)
 		//is jump force 0?
 		if (m_jump_force <= 0.0f)
 			m_jumping = false;
+
 	}
 
 	if (m_moving_left)

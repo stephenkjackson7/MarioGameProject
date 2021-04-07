@@ -20,6 +20,22 @@ C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\Mari
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(29,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  LevelMap.cpp
+  PowBlock.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(14,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(15,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(34,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(37,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(37,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(37,62): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(37,62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(42,68): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(42,68): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(42,87): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.cpp(42,87): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Source.cpp
   Generating Code...
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(62): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(90): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe
