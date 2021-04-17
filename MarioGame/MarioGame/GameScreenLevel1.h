@@ -32,7 +32,6 @@ private:
 	CharacterLuigi* luigi;
 	CharacterKoopa* koopa;
 	vector<CharacterKoopa*> m_enemies;
-	Texture2D* m_background_texture;
 	LevelMap* m_level_map;
 	PowBlock* m_pow_block;
 
@@ -43,8 +42,7 @@ private:
 
 	void DoScreenShake();
 	void SetLevelMap();
-	bool SetUpLevel();
-	
+	void SetUpLevel();
 	void UpdateEnemies(float deltaTime, SDL_Event e);
 	void CreateKoopa(Vector2D position, FACING direction, float speed);
 

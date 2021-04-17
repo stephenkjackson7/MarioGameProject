@@ -2,7 +2,7 @@
 
 
 /*
-* when making a map remember:
+* when making a map:
 * 0 = empty space, 1 = blocked/occupied space
 */
 

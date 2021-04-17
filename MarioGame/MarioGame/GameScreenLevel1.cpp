@@ -1,11 +1,11 @@
 #include <iostream>
 #include "GameScreenLevel1.h"
-#include "Texture2D.h"
 #include "Collisions.h"
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
 {
 	m_level_map = nullptr;
+	SetBackground("Images/BackgroundMB.png");
 	SetUpLevel();
 }
 
@@ -80,15 +80,17 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 }
 
-bool GameScreenLevel1::SetUpLevel()
+void GameScreenLevel1::SetUpLevel()
 {
 	//load texture
+	/*
 	m_background_texture = new Texture2D(m_renderer);
 	if (!m_background_texture->LoadFromFile("Images/BackgroundMB.png"))
 	{
 		std::cout << "Failed to load background texture!" << std::endl;
 		return false;
 	}
+	*/
 	SetLevelMap();
 	m_pow_block = new PowBlock(m_renderer, m_level_map);
 	{
@@ -99,6 +101,7 @@ bool GameScreenLevel1::SetUpLevel()
 	luigi = new CharacterLuigi(m_renderer, "Images/Luigi.png", Vector2D(64, 330), m_level_map);
 	CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
 	CreateKoopa(Vector2D(325, 32), FACING_LEFT, KOOPA_SPEED);
+	
 }
 
 void GameScreenLevel1::SetLevelMap()
@@ -139,6 +142,18 @@ void GameScreenLevel1::UpdatePOWBlock()
 				DoScreenShake();
 				m_pow_block->TakeHit();
 				mario->CancelJump();
+			}
+		}
+	}
+	if (Collisions::Instance()->Box(luigi->GetCollisionBox(), m_pow_block->GetCollisionBox()))
+	{
+		if (m_pow_block->isAvailable())
+		{
+			if (luigi->IsJumping())
+			{
+				DoScreenShake();
+				m_pow_block->TakeHit();
+				luigi->CancelJump();
 			}
 		}
 	}
