@@ -13,7 +13,7 @@ Collisions::~Collisions()
 	m_instance = nullptr;
 }
 
-Collisions* Collisions::Instance() // IF SMTH WRONG, THIS MIGHT NOT BE RIGHT 
+Collisions* Collisions::Instance()
 {
 	if (!m_instance)
 	{

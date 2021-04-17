@@ -24,6 +24,7 @@ void CloseSDL();
 void Render();
 void LoadMusic(string path);
 
+bool CanStart = 0;
 
 int main(int argc, char* args[])
 {
@@ -36,7 +37,9 @@ int main(int argc, char* args[])
 			Mix_PlayMusic(g_music, -1);
 		}
 
-		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);
+		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_MENU);
+		CanStart = 1;
+		
 		//set the time
 		g_old_time = SDL_GetTicks();
 		bool quit = false;
@@ -49,7 +52,6 @@ int main(int argc, char* args[])
 	}
 
 	CloseSDL();
-
 	return 0;
 }
 
@@ -126,7 +128,11 @@ void CloseSDL()
 
 	IMG_Quit();
 	SDL_Quit();
+
+
 }
+
+
 
 bool Update()
 {
@@ -152,7 +158,19 @@ bool Update()
 				case SDLK_q:
 					return true;
 					break;
+
+				case SDLK_RETURN:
+					if (CanStart)
+					{
+						delete game_screen_manager;
+						game_screen_manager = nullptr;
+						game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);
+						CanStart = 0;
+					}
+					break;
 			}
+
+
 	}
 	game_screen_manager->Update((float)(new_time - g_old_time) / 1000.0f, e);
 	g_old_time = new_time;

@@ -15,6 +15,7 @@ public:
 	virtual void Render();
 	virtual void Update(float deltaTime, SDL_Event e);
 
+	void SetDirection(FACING direction);
 	bool GetInjured();
 
 private:

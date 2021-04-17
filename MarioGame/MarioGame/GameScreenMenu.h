@@ -12,5 +12,6 @@ public:
 	void Render();
 	void Update(float deltaTime, SDL_Event e);
 private:
+	float m_background_yPos;
 };
 #endif

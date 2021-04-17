@@ -35,6 +35,8 @@ public:
 		return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());
 	}
 
+
+
 protected:
 	SDL_Renderer* m_renderer;
 	Vector2D m_position;

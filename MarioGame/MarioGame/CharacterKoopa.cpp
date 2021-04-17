@@ -46,6 +46,11 @@ void CharacterKoopa::FlipRightwayUp()
 	Jump();
 }
 
+void CharacterKoopa::SetDirection(FACING direction)
+{
+	m_facing_direction = direction;
+}
+
 void CharacterKoopa::Render()
 {
 	//variable to hold left position of the sprite we want to draw

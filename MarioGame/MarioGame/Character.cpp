@@ -55,6 +55,9 @@ void Character::Update(float deltaTime, SDL_Event e)
 		m_can_jump = true;
 	}
 
+	
+
+
 	if (m_jumping)
 	{
 		//adjust position
@@ -66,6 +69,8 @@ void Character::Update(float deltaTime, SDL_Event e)
 		//is jump force 0?
 		if (m_jump_force <= 0.0f)
 			m_jumping = false;
+
+
 
 	}
 
