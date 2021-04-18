@@ -251,7 +251,7 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 		for (unsigned int i = 0; i < m_coins.size(); i++)
 		{
 			//now do the update
-			m_coins[i]->Update(deltaTime);
+			m_coins[i]->Update();
 			
 
 			if (Collisions::Instance()->Circle(m_coins[i], mario) || Collisions::Instance()->Circle(m_coins[i], luigi))
