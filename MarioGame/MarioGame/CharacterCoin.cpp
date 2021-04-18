@@ -5,7 +5,8 @@ CharacterCoin::CharacterCoin(SDL_Renderer* renderer, string imagePath, Vector2D 
 	m_position = start_position;
 	m_single_sprite_w = m_texture->GetWidth() / 3;
 	m_single_sprite_h = m_texture->GetHeight();
-	m_animate = true;
+	m_frame_count = 0;
+
 
 }
 CharacterCoin::~CharacterCoin()
@@ -15,14 +16,28 @@ CharacterCoin::~CharacterCoin()
 
 void CharacterCoin::Render()
 {
-	SDL_Rect portion_of_sprite = { 0, 0, m_single_sprite_w, m_single_sprite_h };
+	SDL_Rect portion_of_sprite = { (m_frame_count * m_single_sprite_w), 0, m_single_sprite_w, m_single_sprite_h };
 	SDL_Rect destRect = { (int)(m_position.x), (int)(m_position.y), m_single_sprite_w, m_single_sprite_h };
 
 	m_texture->Render(portion_of_sprite, destRect, SDL_FLIP_NONE);
-
+	
 }
 
-void CharacterCoin::Update(float deltaTime, SDL_Event e)
+void CharacterCoin::Update(float deltaTime)
 {
-	
+
+	m_current_frame_time += (SDL_GetTicks() / 1000);
+
+	if (m_current_frame_time > FRAME_TIME)
+	{
+		m_frame_count++;
+		m_current_frame_time = 0;
+
+		if (m_frame_count >= 2)
+		{
+			m_frame_count = 0;
+			
+		}
+	}
+
 }

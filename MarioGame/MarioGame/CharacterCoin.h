@@ -10,13 +10,13 @@ public:
 	~CharacterCoin();
 
 	virtual void Render();
-	void Update(float deltaTime, SDL_Event e);
+	void Update(float deltaTime);
 
-	bool m_animate;
 private:
 	float m_single_sprite_w;
 	float m_single_sprite_h;
-	
+	int m_current_frame_time;
+	int m_frame_count;
 
 };
 

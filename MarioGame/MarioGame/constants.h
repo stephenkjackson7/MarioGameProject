@@ -22,3 +22,5 @@
 #define INJURED_TIME 2.5f
 #define INITIAL_JUMP_FORCE_SMALL 200.0f
 #define KOOPA_SPEED 0.1f
+
+#define FRAME_TIME 250.0

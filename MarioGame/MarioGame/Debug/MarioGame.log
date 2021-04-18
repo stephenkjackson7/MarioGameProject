@@ -1,8 +1,17 @@
-﻿  GameScreenLevel1.cpp
+﻿  CharacterCoin.cpp
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(6,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(7,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(19,48): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(19,48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(19,73): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(19,73): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(19,92): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(19,92): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(20,66): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(20,66): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(20,85): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(20,85): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterCoin.cpp(29,35): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe
