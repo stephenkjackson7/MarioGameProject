@@ -6,7 +6,7 @@ CharacterCoin::CharacterCoin(SDL_Renderer* renderer, string imagePath, Vector2D 
 	m_single_sprite_w = m_texture->GetWidth() / 3;
 	m_single_sprite_h = m_texture->GetHeight();
 	m_frame_count = 0;
-	lastTick = 0;
+	m_last_tick = 0;
 }
 CharacterCoin::~CharacterCoin()
 {
@@ -24,13 +24,13 @@ void CharacterCoin::Render()
 
 void CharacterCoin::Update()
 {
-	m_current_frame_time += ((SDL_GetTicks() - lastTick) / 100);
+	m_current_frame_time += ((SDL_GetTicks() - m_last_tick) / 100);
 
 	if (m_current_frame_time > FRAME_TIME)
 	{
 		m_frame_count++;
 		m_current_frame_time = 0;
-		lastTick = SDL_GetTicks();
+		m_last_tick = SDL_GetTicks();
 
 		if (m_frame_count >= 2)
 		{

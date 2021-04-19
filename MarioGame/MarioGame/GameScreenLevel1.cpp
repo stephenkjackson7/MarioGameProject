@@ -42,16 +42,23 @@ void GameScreenLevel1::Render()
 	m_background_texture->Render(Vector2D(0, m_background_yPos), SDL_FLIP_NONE);
 
 	//draw characters
-	mario->Render();
-	luigi->Render();
+	if (mario->GetAlive())
+	{
+		mario->Render();
+	}
+	if (luigi->GetAlive())
+	{
+		luigi->Render();
+	}
 	m_pow_block->Render();
 }
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
-	if (!mario->GetAlive())
+	if (!mario->GetAlive() && !luigi->GetAlive())
 	{
-		
+		//Need to try communicating with Screen Manager to switch to game over screen.	
 	}
+
 	//do screenshake if required
 	if (m_screenshake)
 	{
@@ -71,8 +78,16 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 
 	//update character
-	luigi->Update(deltaTime, e);
-	mario->Update(deltaTime, e);
+	if (mario->GetAlive())
+	{
+		mario->Update(deltaTime, e);
+	}
+
+	if (luigi->GetAlive())
+	{
+		luigi->Update(deltaTime, e);
+	}
+
 
 	/*
 	if (Collisions::Instance()->Circle(mario, luigi))

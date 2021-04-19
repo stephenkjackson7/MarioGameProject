@@ -17,7 +17,7 @@ private:
 	float m_single_sprite_h;
 	int m_current_frame_time;
 	int m_frame_count;
-	int lastTick;
+	int m_last_tick;
 
 };
 
