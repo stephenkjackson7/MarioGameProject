@@ -84,6 +84,20 @@ void CharacterKoopa::Update(float deltaTime, SDL_Event e)
 
 	if (!m_injured)
 	{
+
+		//if koopa tries walking off-screen, turns around
+		if (GetPosition().y < 300 && GetPosition().y > 75 && GetPosition().x < 0)
+		{
+			SetDirection(FACING_RIGHT);
+			SetPosition(Vector2D(1, GetPosition().y));
+		}
+
+		if (GetPosition().y < 300 && GetPosition().y > 75 && (GetPosition().x + (m_texture->GetWidth()/2) > SCREEN_WIDTH-10))
+		{
+			SetDirection(FACING_LEFT);
+		}
+		
+
 		//enemy is not injured so move
 		if (m_facing_direction == FACING_LEFT)
 		{

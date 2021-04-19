@@ -44,6 +44,31 @@ void Character::Update(float deltaTime, SDL_Event e)
 	int centralX_position = (int)(m_position.x + (m_texture->GetWidth() * 0.5)) / TILE_WIDTH;
 	int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
 
+	//if  character walks into bottom left pipe, teleports to top right
+	if (GetPosition().y > 300 && GetPosition().x < 0)
+	{
+		SetPosition(Vector2D((SCREEN_WIDTH - m_texture->GetWidth()), 25));
+	}
+	//if character walks into top left pipe, teleports to bottom right
+	if (GetPosition().y < 75 && (GetPosition().x < 0))
+	{
+		SetPosition(Vector2D((SCREEN_WIDTH - m_texture->GetWidth()), 340));
+	}
+
+	//if character walks into bottom right pipe, teleports to top left pipe
+	if (GetPosition().y > 300 && (GetPosition().x + m_texture->GetWidth() > SCREEN_WIDTH))
+	{
+		SetPosition(Vector2D(1, 25));
+	}
+
+	//if character walks into top right pipe, teleports to bottom left pipe
+	if (GetPosition().y < 75 && (GetPosition().x + m_texture->GetWidth() > SCREEN_WIDTH))
+	{
+		SetPosition(Vector2D(1, 340));
+	}
+
+
+
 	//deal with gravity
 	if (m_current_level_map->GetTileAt(foot_position, centralX_position) == 0)
 	{
