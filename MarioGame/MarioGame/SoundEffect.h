@@ -4,6 +4,9 @@
 
 class SoundEffect
 {
+public:
+
+private:
 
 };
 

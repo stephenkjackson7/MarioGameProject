@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _GAMESCREENLEVEL1_H
 #define _GAMESCREENLEVEL1_H
+#include <vector>
 #include "GameScreen.h"
 #include "Commons.h"
 #include "Texture2D.h"
@@ -11,12 +12,10 @@
 #include "CharacterCoin.h"
 #include "LevelMap.h"
 #include "PowBlock.h"
-#include <vector>
 
 class PowBlock;
 class Character;
 class Texture2D;
-
 
 class GameScreenLevel1 : GameScreen
 {

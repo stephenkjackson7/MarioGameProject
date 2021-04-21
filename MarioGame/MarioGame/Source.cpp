@@ -30,12 +30,7 @@ int main(int argc, char* args[])
 {
 	if (InitSDL())
 	{
-		LoadMusic("Music/Mario.mp3");
 
-		if (Mix_PlayingMusic() == 0)
-		{
-			Mix_PlayMusic(g_music, -1);
-		}
 
 		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_MENU);
 		CanStart = 1;
@@ -162,6 +157,12 @@ bool Update()
 				case SDLK_RETURN:
 					if (CanStart)
 					{
+						LoadMusic("Music/Mario.mp3");
+
+						if (Mix_PlayingMusic() == 0)
+						{
+							Mix_PlayMusic(g_music, -1);
+						}
 						delete game_screen_manager;
 						game_screen_manager = nullptr;
 						game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);

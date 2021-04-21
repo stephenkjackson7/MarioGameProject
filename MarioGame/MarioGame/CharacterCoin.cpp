@@ -24,7 +24,7 @@ void CharacterCoin::Render()
 
 void CharacterCoin::Update()
 {
-	m_current_frame_time += ((SDL_GetTicks() - m_last_tick) / 100);
+	m_current_frame_time += ((SDL_GetTicks() - m_last_tick) / 75);
 
 	if (m_current_frame_time > FRAME_TIME)
 	{
@@ -32,7 +32,7 @@ void CharacterCoin::Update()
 		m_current_frame_time = 0;
 		m_last_tick = SDL_GetTicks();
 
-		if (m_frame_count >= 2)
+		if (m_frame_count >= 3)
 		{
 			m_frame_count = 0;
 			

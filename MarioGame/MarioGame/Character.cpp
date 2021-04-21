@@ -84,11 +84,9 @@ void Character::Update(float deltaTime, SDL_Event e)
 		m_can_jump = true;
 	}
 
-
+	//adds collision to blocks above head
 	if (m_current_level_map->GetTileAt(head_position, centralX_position) == 1)
-	{
 		CancelJump();
-	}
 
 	if (m_jumping)
 	{
@@ -172,6 +170,10 @@ void Character::AddWindowCollision()
 	{
 		SetPosition(Vector2D(SCREEN_WIDTH - (m_texture->GetWidth() - 3), GetPosition().y));
 	}
+
+	//stops from jumping out of the top of the screen
+	if (GetPosition().y < 0)
+		CancelJump();
 }
 
 void Character::Bounce(float deltaTime)

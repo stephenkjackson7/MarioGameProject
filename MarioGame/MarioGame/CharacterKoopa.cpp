@@ -5,8 +5,10 @@ CharacterKoopa::CharacterKoopa(SDL_Renderer* renderer, string imagePath, Vector2
 	m_facing_direction = start_facing;
 	m_movement_speed = movement_speed;
 	m_position = start_position;
-	m_single_sprite_w = m_texture->GetWidth() / 2;
+	m_single_sprite_w = m_texture->GetWidth() / 3;
 	m_single_sprite_h = m_texture->GetHeight();
+	m_frame_count = 1;
+	m_last_tick = 0;
 
 }
 CharacterKoopa::~CharacterKoopa()
@@ -51,16 +53,13 @@ void CharacterKoopa::SetDirection(FACING direction)
 
 void CharacterKoopa::Render()
 {
-	//variable to hold left position of the sprite we want to draw
-	int left = 0.0f;
-
 	//if injured move the left position to be the left position of the second image on sprite sheet
 	if (m_injured)
-		left = m_single_sprite_w;
+		m_frame_count = 0;
 
 	//get the portion of the sprite sheet you want to draw
 	//							xPos, yPos, width of sprite, height of sprite
-	SDL_Rect portion_of_sprite = { left, 0, m_single_sprite_w, m_single_sprite_h };
+	SDL_Rect portion_of_sprite = { (m_frame_count * m_single_sprite_w), 0, m_single_sprite_w, m_single_sprite_h };
 
 	//determine where you want it drawn
 	SDL_Rect destRect = { (int)(m_position.x), (int)(m_position.y), m_single_sprite_w, m_single_sprite_h };
@@ -78,10 +77,26 @@ void CharacterKoopa::Render()
 
 void CharacterKoopa::Update(float deltaTime, SDL_Event e)
 {
+
+if (!m_injured)
+{
 	Character::Update(deltaTime, e);
 
-	if (!m_injured)
+	m_current_frame_time += ((SDL_GetTicks() - m_last_tick) / 125);
+
+	if (m_current_frame_time > FRAME_TIME)
 	{
+		m_frame_count++;
+		m_current_frame_time = 0;
+		m_last_tick = SDL_GetTicks();
+
+		if (m_frame_count > 2)
+		{
+			m_frame_count = 1;
+		}
+	}
+
+
 
 		//if koopa tries walking off-screen, turns around
 		if (GetPosition().y < 300 && GetPosition().y > 75 && GetPosition().x < 0)
@@ -128,4 +143,9 @@ void CharacterKoopa::Update(float deltaTime, SDL_Event e)
 bool CharacterKoopa::GetInjured()
 {
 	return m_injured;
+}
+
+void WalkAnimation()
+{
+
 }

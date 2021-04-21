@@ -16,6 +16,7 @@ public:
 	virtual void Update(float deltaTime, SDL_Event e);
 
 	void SetDirection(FACING direction);
+	void WalkAnimation();
 	bool GetInjured();
 
 private:
@@ -24,6 +25,9 @@ private:
 	float m_single_sprite_h;
 	bool m_injured;
 	float m_injured_time;
+	int m_frame_count;
+	int m_last_tick;
+	int m_current_frame_time;
 
 
 	void FlipRightwayUp();

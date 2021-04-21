@@ -1,8 +1,4 @@
-﻿  GameScreenLevel1.cpp
+﻿  CharacterMario.cpp
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(14,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe
