@@ -16,7 +16,6 @@ public:
 	virtual void Update(float deltaTime, SDL_Event e);
 
 	void SetDirection(FACING direction);
-	void WalkAnimation();
 	bool GetInjured();
 
 private:

@@ -103,8 +103,8 @@ void GameScreenLevel1::SetUpLevel()
 		m_screenshake = false;
 		m_background_yPos = 0.0f;
 	}
-	mario = new CharacterMario(m_renderer, "Images/Mario.png", Vector2D(64, 330), m_level_map);
-	luigi = new CharacterLuigi(m_renderer, "Images/Luigi.png", Vector2D(416, 330), m_level_map);
+	mario = new CharacterMario(m_renderer, "Images/Mario2.png", Vector2D(64, 330), m_level_map);
+	luigi = new CharacterLuigi(m_renderer, "Images/Luigi2.png", Vector2D(416, 330), m_level_map);
 	SpawnCoins();
 	CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
 	CreateKoopa(Vector2D(325, 32), FACING_LEFT, KOOPA_SPEED);

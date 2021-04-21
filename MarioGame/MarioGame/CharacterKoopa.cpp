@@ -144,8 +144,3 @@ bool CharacterKoopa::GetInjured()
 {
 	return m_injured;
 }
-
-void WalkAnimation()
-{
-
-}
