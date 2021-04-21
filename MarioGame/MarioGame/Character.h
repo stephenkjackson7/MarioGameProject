@@ -35,7 +35,8 @@ public:
 		return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());
 	}
 
-
+	void AddWindowCollision();
+	void Bounce(float deltaTime);
 
 protected:
 	SDL_Renderer* m_renderer;

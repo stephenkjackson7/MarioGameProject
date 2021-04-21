@@ -68,17 +68,9 @@ void CharacterMario::Update(float deltaTime, SDL_Event e)
 	}
 
 	Character::Update(deltaTime, e);
+	AddWindowCollision();
 
-	//stops from exiting screen to left
-	if (GetPosition().y < 300 && GetPosition().y > 100 && GetPosition().x < 0)
-	{
-		SetPosition(Vector2D(1, GetPosition().y));
-	}
 
-	//stops from exiting screen to right
-	if (GetPosition().y < 300 && GetPosition().y > 100 && (GetPosition().x + (m_texture->GetWidth() / 2) > SCREEN_WIDTH - 10))
-	{
-		SetPosition(Vector2D(SCREEN_WIDTH - m_texture->GetWidth(), GetPosition().y));
-	}
+
 
 }

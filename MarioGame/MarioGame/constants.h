@@ -8,7 +8,7 @@
 //gravity constants
 #define GRAVITY 260.0f
 #define INITIAL_JUMP_FORCE 600.0f
-#define JUMP_FORCE_DECREMENT 400.0f
+#define JUMP_FORCE_DECREMENT 500.0f
 
 //map constants
 #define MAP_HEIGHT 13

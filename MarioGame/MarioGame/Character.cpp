@@ -11,7 +11,9 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	m_texture = new Texture2D(m_renderer);
 	m_facing_direction = FACING_RIGHT;
 	m_collision_radius = 15.0f;
-
+	m_can_jump = true;
+	m_jumping = false;
+	m_jump_force = 0.0f;
 
 	if (!m_texture->LoadFromFile(imagePath))
 	{
@@ -42,7 +44,9 @@ void Character::Update(float deltaTime, SDL_Event e)
 {
 	//collision position variables
 	int centralX_position = (int)(m_position.x + (m_texture->GetWidth() * 0.5)) / TILE_WIDTH;
+	int head_position = (int)(m_position.y) / TILE_HEIGHT;
 	int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
+
 
 	//if  character walks into bottom left pipe, teleports to top right
 	if (GetPosition().y > 300 && GetPosition().x < 0)
@@ -80,8 +84,11 @@ void Character::Update(float deltaTime, SDL_Event e)
 		m_can_jump = true;
 	}
 
-	
 
+	if (m_current_level_map->GetTileAt(head_position, centralX_position) == 1)
+	{
+		CancelJump();
+	}
 
 	if (m_jumping)
 	{
@@ -94,8 +101,6 @@ void Character::Update(float deltaTime, SDL_Event e)
 		//is jump force 0?
 		if (m_jump_force <= 0.0f)
 			m_jumping = false;
-
-
 
 	}
 
@@ -154,3 +159,23 @@ float Character::GetCollisionRadius()
 	return m_collision_radius;
 }
 
+void Character::AddWindowCollision()
+{
+	//stops from exiting screen to left
+	if (GetPosition().y < 300 && GetPosition().y > 100 && GetPosition().x < 0)
+	{
+		SetPosition(Vector2D(1, GetPosition().y));
+	}
+
+	//stops from exiting screen to right
+	if (GetPosition().y < 300 && GetPosition().y > 100 && (GetPosition().x + (m_texture->GetWidth() / 2) > SCREEN_WIDTH - 10))
+	{
+		SetPosition(Vector2D(SCREEN_WIDTH - (m_texture->GetWidth() - 3), GetPosition().y));
+	}
+}
+
+void Character::Bounce(float deltaTime)
+{
+	m_jump_force = INITIAL_JUMP_FORCE;
+	m_position.y -= m_jump_force * deltaTime;
+}

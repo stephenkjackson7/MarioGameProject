@@ -10,6 +10,7 @@ PowBlock::PowBlock(SDL_Renderer* renderer, LevelMap* map)
 		return;
 	}
 
+	m_renderer = renderer;
 	m_level_map = map;
 	m_single_sprite_w = m_texture->GetWidth() / 3; // three images in sprite sheet in a row
 	m_single_sprite_h = m_texture->GetHeight();

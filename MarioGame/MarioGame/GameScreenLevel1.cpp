@@ -76,7 +76,6 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 	}
 
-
 	//update character
 	if (mario->GetAlive())
 	{
@@ -88,15 +87,9 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 		luigi->Update(deltaTime, e);
 	}
 
+	//Try figure out why this isn't working - probably Missing something obvious.
 
-	/*
-	if (Collisions::Instance()->Circle(mario, luigi))
-	{
-		cout << "Circle hit!" << endl;
-	}
-	*/
 	
-
 	UpdatePOWBlock();
 	UpdateEnemies(deltaTime, e);
 	UpdateCoins(deltaTime, e);
@@ -128,7 +121,7 @@ void GameScreenLevel1::SetLevelMap()
 									   { 0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0 },
 									   { 1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1 },
 									   { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-									   { 0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0 },
+									   { 0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0 },
 									   { 1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1 },
 									   { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
 									   { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
@@ -220,26 +213,42 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			{
 				if (Collisions::Instance()->Circle(m_enemies[i], mario))
 				{
-					if (m_enemies[i]->GetInjured())
+					if ((mario->GetPosition().y + 16) < m_enemies[i]->GetPosition().y)
+					{
+						mario->SetPosition(Vector2D(mario->GetPosition().x, mario->GetPosition().y - 30));
+						m_enemies[i]->TakeDamage();
+					}
+
+					else if (m_enemies[i]->GetInjured())
 					{
 						m_enemies[i]->SetAlive(false);
 					}
 					else
 					{
 						mario->SetAlive(false);
-						cout << "Mario died.";
+						mario->SetPosition(Vector2D(1000, 1000));
+						cout << "Mario has died.";
 					}
+
+
 				}
 				if (Collisions::Instance()->Circle(m_enemies[i], luigi))
 				{
-					if (m_enemies[i]->GetInjured())
+					if ((luigi->GetPosition().y + 16) < m_enemies[i]->GetPosition().y)
+					{
+						m_enemies[i]->TakeDamage();
+						luigi->SetPosition(Vector2D(luigi->GetPosition().x, luigi->GetPosition().y - 30));
+					}
+
+					else if (m_enemies[i]->GetInjured())
 					{
 						m_enemies[i]->SetAlive(false);
 					}
 					else
 					{
 						luigi->SetAlive(false);
-						cout << "Luigi died.";
+						luigi->SetPosition(Vector2D(1000, 1000));
+						cout << "Luigi has died.";
 					}
 				}
 			}
