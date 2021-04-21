@@ -105,7 +105,7 @@ if (!m_injured)
 			SetPosition(Vector2D(1, GetPosition().y));
 		}
 
-		if (GetPosition().y < 300 && GetPosition().y > 75 && (GetPosition().x + (m_texture->GetWidth()/2) > SCREEN_WIDTH-10))
+		if (GetPosition().y < 300 && GetPosition().y > 75 && (GetPosition().x + (m_single_sprite_w / 2) > SCREEN_WIDTH-10))
 		{
 			SetDirection(FACING_LEFT);
 		}

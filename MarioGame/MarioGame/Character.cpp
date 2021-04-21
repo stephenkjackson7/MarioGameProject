@@ -9,6 +9,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	m_renderer = renderer;
 	m_position = start_position;
 	m_texture = new Texture2D(m_renderer);
+	m_single_sprite = 32;
 	m_facing_direction = FACING_RIGHT;
 	m_collision_radius = 15.0f;
 	m_can_jump = true;
@@ -43,7 +44,7 @@ void Character::Render()
 void Character::Update(float deltaTime, SDL_Event e)
 {
 	//collision position variables
-	int centralX_position = (int)(m_position.x + (m_texture->GetWidth() * 0.5)) / TILE_WIDTH;
+	int centralX_position = (int)(m_position.x + (m_single_sprite * 0.5)) / TILE_WIDTH;
 	int head_position = (int)(m_position.y) / TILE_HEIGHT;
 	int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
 
@@ -51,22 +52,22 @@ void Character::Update(float deltaTime, SDL_Event e)
 	//if  character walks into bottom left pipe, teleports to top right
 	if (GetPosition().y > 300 && GetPosition().x < 0)
 	{
-		SetPosition(Vector2D((SCREEN_WIDTH - m_texture->GetWidth()), 25));
+		SetPosition(Vector2D((SCREEN_WIDTH - m_single_sprite), 25));
 	}
 	//if character walks into top left pipe, teleports to bottom right
 	if (GetPosition().y < 75 && (GetPosition().x < 0))
 	{
-		SetPosition(Vector2D((SCREEN_WIDTH - m_texture->GetWidth()), 340));
+		SetPosition(Vector2D((SCREEN_WIDTH - m_single_sprite), 340));
 	}
 
 	//if character walks into bottom right pipe, teleports to top left pipe
-	if (GetPosition().y > 300 && (GetPosition().x + m_texture->GetWidth() > SCREEN_WIDTH))
+	if (GetPosition().y > 300 && (GetPosition().x + m_single_sprite) > SCREEN_WIDTH)
 	{
-		SetPosition(Vector2D(1, 25));
+		SetPosition(Vector2D(5, 25));
 	}
 
 	//if character walks into top right pipe, teleports to bottom left pipe
-	if (GetPosition().y < 75 && (GetPosition().x + m_texture->GetWidth() > SCREEN_WIDTH))
+	if (GetPosition().y < 75 && (GetPosition().x + m_single_sprite) > SCREEN_WIDTH)
 	{
 		SetPosition(Vector2D(1, 340));
 	}
@@ -166,9 +167,9 @@ void Character::AddWindowCollision()
 	}
 
 	//stops from exiting screen to right
-	if (GetPosition().y < 300 && GetPosition().y > 100 && (GetPosition().x + (m_texture->GetWidth() / 2) > SCREEN_WIDTH - 10))
+	if (GetPosition().y < 300 && GetPosition().y > 100 && (GetPosition().x + (m_single_sprite / 2) > SCREEN_WIDTH ))
 	{
-		SetPosition(Vector2D(SCREEN_WIDTH - (m_texture->GetWidth() - 3), GetPosition().y));
+		SetPosition(Vector2D((SCREEN_WIDTH - (m_single_sprite - 3)), GetPosition().y));
 	}
 
 	//stops from jumping out of the top of the screen

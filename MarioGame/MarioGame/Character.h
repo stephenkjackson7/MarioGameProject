@@ -48,6 +48,7 @@ protected:
 	bool m_moving_right;
 	bool m_jumping;
 	bool m_can_jump;
+	float m_single_sprite;
 	float m_jump_force;
 	float m_collision_radius;
 
