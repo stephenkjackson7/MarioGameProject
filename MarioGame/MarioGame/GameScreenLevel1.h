@@ -26,6 +26,7 @@ public:
 	void Render() override;
 	void Update(float deltaTime, SDL_Event e) override;
 	void UpdatePOWBlock();
+	void GameOver();
 
 private:
 	CharacterMario* mario;
@@ -37,6 +38,8 @@ private:
 	LevelMap* m_level_map;
 	PowBlock* m_pow_block;
 
+	int m_score;
+	bool m_gameover;
 	bool m_screenshake;
 	float m_shake_time;
 	float m_wobble;
@@ -50,7 +53,6 @@ private:
 	void CreateKoopa(Vector2D position, FACING direction, float speed);
 	void CreateCoin(Vector2D position);
 	void SpawnCoins();
-
 };
 
 #endif

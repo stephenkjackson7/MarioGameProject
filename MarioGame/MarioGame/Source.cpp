@@ -7,6 +7,7 @@
 #include "Texture2D.h"
 #include "Commons.h"
 #include "GameScreenManager.h"
+#include "GameScreenLevel1.h"
 
 GameScreenManager* game_screen_manager;
 Uint32 g_old_time;
@@ -30,8 +31,6 @@ int main(int argc, char* args[])
 {
 	if (InitSDL())
 	{
-
-
 		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_MENU);
 		CanStart = 1;
 		
@@ -131,7 +130,6 @@ void CloseSDL()
 
 bool Update()
 {
-
 	Uint32 new_time = SDL_GetTicks();
 
 	//Event handler

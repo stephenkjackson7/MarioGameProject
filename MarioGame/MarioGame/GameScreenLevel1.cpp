@@ -54,10 +54,7 @@ void GameScreenLevel1::Render()
 }
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
-	if (!mario->GetAlive() && !luigi->GetAlive())
-	{
-		//Need to try communicating with Screen Manager to switch to game over screen.	
-	}
+	GameOver();
 
 	//do screenshake if required
 	if (m_screenshake)
@@ -87,9 +84,6 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 		luigi->Update(deltaTime, e);
 	}
 
-	//Try figure out why this isn't working - probably Missing something obvious.
-
-	
 	UpdatePOWBlock();
 	UpdateEnemies(deltaTime, e);
 	UpdateCoins(deltaTime, e);
@@ -178,6 +172,8 @@ void GameScreenLevel1::DoScreenShake()
 	for (unsigned int i = 0; i < m_enemies.size(); i++)
 	{
 		m_enemies[i]->TakeDamage();
+		m_score += 50;
+		cout << "Score increased by 50 for hitting Koopa with POW Block.\n";
 	}
 }
 
@@ -217,17 +213,21 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					{
 						mario->SetPosition(Vector2D(mario->GetPosition().x, mario->GetPosition().y - 30));
 						m_enemies[i]->TakeDamage();
+						m_score += 10;
+						cout << "Score increased by 10 Points for hitting Koopa.\n";
 					}
 
 					else if (m_enemies[i]->GetInjured())
 					{
 						m_enemies[i]->SetAlive(false);
+						m_score += 100;
+						cout << "Score increased by 100 Points for killing Koopa.\n";
 					}
 					else
 					{
 						mario->SetAlive(false);
 						mario->SetPosition(Vector2D(1000, 1000));
-						cout << "Mario has died.";
+						cout << "Mario has died.\n";
 					}
 
 
@@ -238,17 +238,21 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					{
 						m_enemies[i]->TakeDamage();
 						luigi->SetPosition(Vector2D(luigi->GetPosition().x, luigi->GetPosition().y - 30));
+						m_score += 10;
+						cout << "Score increased by 10 Points for hitting Koopa.\n";
 					}
 
 					else if (m_enemies[i]->GetInjured())
 					{
 						m_enemies[i]->SetAlive(false);
+						m_score += 100;
+						cout << "Score increased by 100 Points for killing Koopa.\n";
 					}
 					else
 					{
 						luigi->SetAlive(false);
 						luigi->SetPosition(Vector2D(1000, 1000));
-						cout << "Luigi has died.";
+						cout << "Luigi has died.\n";
 					}
 				}
 			}
@@ -281,6 +285,8 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 			if (Collisions::Instance()->Circle(m_coins[i], mario) || Collisions::Instance()->Circle(m_coins[i], luigi))
 			{
 				m_coins[i]->SetAlive(false);
+				m_score += 10;
+				cout << "Score increased by 250 Points for collecting a Coin.\n";
 
 			}
 
@@ -321,4 +327,11 @@ void GameScreenLevel1::SpawnCoins()
 	CreateCoin(Vector2D(316, 260));
 	CreateCoin(Vector2D(352, 260));
 	CreateCoin(Vector2D(388, 260));
+}
+
+void GameScreenLevel1::GameOver()
+{
+	if (!mario->GetAlive() && !luigi->GetAlive())
+		cout << "Game Over.\n";
+
 }

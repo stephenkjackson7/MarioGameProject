@@ -1,4 +1,19 @@
-﻿  Character.cpp
+﻿  GameScreenLevel1.cpp
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(16,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(16,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\GameScreenLevel1.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
+  GameScreenManager.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(16,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(16,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Source.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(16,112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\PowBlock.h(16,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe
