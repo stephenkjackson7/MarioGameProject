@@ -7,6 +7,7 @@
 #include "Texture2D.h"
 #include "constants.h"
 #include "LevelMap.h"
+#include "SoundEffect.h"
 
 class Texture2D;
 

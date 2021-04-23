@@ -1,4 +1,4 @@
 ﻿  Character.cpp
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(36,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe

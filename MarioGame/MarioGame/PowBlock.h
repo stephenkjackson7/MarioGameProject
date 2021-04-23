@@ -1,9 +1,11 @@
 #pragma once
 #ifndef _POWBLOCK_H
 #define _POWBLOCK_H
+#include <iostream>
 #include "LevelMap.h"
 #include "Texture2D.h"
-#include <iostream>
+#include "SoundEffect.h"
+
 
 class PowBlock
 {
