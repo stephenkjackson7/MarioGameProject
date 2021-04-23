@@ -1,16 +1,4 @@
-﻿  CharacterLuigi.cpp
+﻿  Character.cpp
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\Character.h(35,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(10,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(11,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(28,48): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(28,48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(28,73): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(28,73): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(28,92): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(28,92): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(29,66): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(29,66): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(29,85): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\MarioGame\CharacterLuigi.cpp(29,85): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   MarioGame.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\MarioGameProject\MarioGame\Debug\MarioGame.exe

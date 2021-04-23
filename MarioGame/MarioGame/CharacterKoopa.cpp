@@ -96,8 +96,6 @@ if (!m_injured)
 		}
 	}
 
-
-
 		//if koopa tries walking off-screen, turns around
 		if (GetPosition().y < 300 && GetPosition().y > 75 && GetPosition().x < 0)
 		{

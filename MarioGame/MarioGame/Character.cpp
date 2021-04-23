@@ -50,26 +50,26 @@ void Character::Update(float deltaTime, SDL_Event e)
 
 
 	//if  character walks into bottom left pipe, teleports to top right
-	if (GetPosition().y > 300 && GetPosition().x < 0)
+	if (GetPosition().y > 300 && GetPosition().x < 64)
 	{
-		SetPosition(Vector2D((SCREEN_WIDTH - m_single_sprite), 25));
+		SetPosition(Vector2D(((SCREEN_WIDTH - m_single_sprite) - 64), 25));
 	}
 	//if character walks into top left pipe, teleports to bottom right
-	if (GetPosition().y < 75 && (GetPosition().x < 0))
+	if (GetPosition().y < 75 && (GetPosition().x < 64))
 	{
-		SetPosition(Vector2D((SCREEN_WIDTH - m_single_sprite), 340));
+		SetPosition(Vector2D(((SCREEN_WIDTH - m_single_sprite) - 64), 340));
 	}
 
 	//if character walks into bottom right pipe, teleports to top left pipe
-	if (GetPosition().y > 300 && (GetPosition().x + m_single_sprite) > SCREEN_WIDTH)
+	if (GetPosition().y > 300 && ((GetPosition().x + m_single_sprite) + 64) > SCREEN_WIDTH)
 	{
-		SetPosition(Vector2D(5, 25));
+		SetPosition(Vector2D(64, 25));
 	}
 
 	//if character walks into top right pipe, teleports to bottom left pipe
-	if (GetPosition().y < 75 && (GetPosition().x + m_single_sprite) > SCREEN_WIDTH)
+	if (GetPosition().y < 75 && ((GetPosition().x + m_single_sprite) + 64) > SCREEN_WIDTH)
 	{
-		SetPosition(Vector2D(1, 340));
+		SetPosition(Vector2D(64, 340));
 	}
 
 
@@ -167,9 +167,9 @@ void Character::AddWindowCollision()
 	}
 
 	//stops from exiting screen to right
-	if (GetPosition().y < 300 && GetPosition().y > 100 && (GetPosition().x + (m_single_sprite / 2) > SCREEN_WIDTH ))
+	if (GetPosition().y < 300 && GetPosition().y > 100 && (GetPosition().x + (m_single_sprite) > SCREEN_WIDTH ))
 	{
-		SetPosition(Vector2D((SCREEN_WIDTH - (m_single_sprite - 3)), GetPosition().y));
+		SetPosition(Vector2D((SCREEN_WIDTH - (m_single_sprite)), GetPosition().y));
 	}
 
 	//stops from jumping out of the top of the screen

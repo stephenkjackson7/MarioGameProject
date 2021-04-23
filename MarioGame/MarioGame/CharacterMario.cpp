@@ -41,6 +41,7 @@ void CharacterMario::Render()
 
 void CharacterMario::Update(float deltaTime, SDL_Event e)
 {
+	WalkAnimation();
 
 	switch (e.type)
 	{
@@ -48,17 +49,14 @@ void CharacterMario::Update(float deltaTime, SDL_Event e)
 		switch (e.key.keysym.sym)
 		{
 		case SDLK_LEFT:
-			WalkAnimation();
 			m_moving_left = true;
 			break;
 		case SDLK_RIGHT:
-			WalkAnimation();
 			m_moving_right = true;
 			break;
 		case SDLK_UP:
 			if (m_can_jump)
 			{
-				m_frame_count = 0;
 				Jump();
 			}
 		}
@@ -86,9 +84,12 @@ void CharacterMario::Update(float deltaTime, SDL_Event e)
 
 void CharacterMario::WalkAnimation()
 {
-	if (!IsJumping())
+	if (IsJumping())
+		m_frame_count = 0;
+
+	else if (m_moving_left || m_moving_right)
 	{
-		m_current_frame_time += ((SDL_GetTicks() - m_last_tick));
+		m_current_frame_time += ((SDL_GetTicks() - m_last_tick) / 75);
 
 		if (m_current_frame_time > FRAME_TIME)
 		{
@@ -102,4 +103,6 @@ void CharacterMario::WalkAnimation()
 			}
 		}
 	}
+	else
+		m_frame_count = 1;
 }
